@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{% block title%}new Topic{%endblock%}
+
+{% block breadcrumb%}
+
+         <li class="bradcrumb-item"><a href="{% url 'indrex' %}">Board </a> /</li>
+         <li class="bradcrumb-item "><a href="{% url 'board_topics' board.pk %}">{{board.name}}</a>/</li>
+         <li class="bradcrumb-item active">new Tpoic</li>
+
+{%endblock%}
+{%block content%}
+<form method="post"  novalidate>
+    {% csrf_token %}
+    <!--
+    <div class="form-group">
+      <label for="id_subject">Subject</label>
+      <input type="text" class="form-control" id="id_subject" name="subject">
+    </div>
+    <div class="form-group">
+      <label for="id_message">Message</label>
+      <textarea class="form-control" id="id_message" name="message" rows="5"></textarea>
+    </div>-->
+    {%include 'include/formul.html'%}
+    <button type="submit" class="btn btn-success">Add</button>
+  </form>
+{%endblock%}
+ 

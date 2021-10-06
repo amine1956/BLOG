@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block body%}
+<style>
+.a15{
+background-color:rgb(0, 0, 0);
+
+}
+
+</style>
+<body class="a15">
+    <div class="contaoner">
+        <h1>Log in</h1>
+        <form method="post" novalidate>
+        {%csrf_token%}
+        <input type="hidden" name="next" value="{{next}}">
+        {%include 'include/formul.html'%}
+        <button type="submit" class="btn btn-primary">Log in</button> 
+        </form>
+        </div>
+        <div class="card-footer text-muted text-center">
+          Create New account <a href="{%url 'singup'%}">Sign up </a>
+        </div>
+</body>
+
+{%endblock%}
