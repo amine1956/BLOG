@@ -1,5 +1,8 @@
 {%load widget_tweaks%}
 {% if form.non_field_errors%}
+<div class="container d-flex h-100">
+  <div class="row align-self-center">
+   
 <div class="alert alert-danger" role="alerts">
 {%for error in form.non_field_errors%}
 <p {%if forloop.last%} class="mb-0" {%endif%}>{{error}}</p>
@@ -22,6 +25,8 @@
       {%render_field field class="form-control"%}
     
     </div>
+  </div>
+</div>
     {%if field.help_text%}
     <small class="form-text text-muted">
         {{field.help_text}}
